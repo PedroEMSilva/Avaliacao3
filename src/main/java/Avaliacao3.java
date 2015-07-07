@@ -73,7 +73,9 @@ public class Avaliacao3 {
         for (Lancamento l : lancamentos) {
             if (Objects.equals(l.getConta(), conta)) {
                 System.out.println(l);
+               
             }
+            
         }
     }
 

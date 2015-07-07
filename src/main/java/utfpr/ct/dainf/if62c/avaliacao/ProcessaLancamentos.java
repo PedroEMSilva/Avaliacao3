@@ -57,10 +57,11 @@ public class ProcessaLancamentos {
        
        if(linha!=null){
            return processaLinha(linha);
-       }else{
+       }
+       if(getNextLine()==null){
            return null;
        }
-        
+       return null;
     }
     
     public List<Lancamento> getLancamentos() throws IOException {
@@ -69,6 +70,7 @@ public class ProcessaLancamentos {
         while((a=getNextLancamento())!=null){
            l.add(a);
        }
+        l.sort(new LancamentoComparator());
        reader.close();
        return l;
        
